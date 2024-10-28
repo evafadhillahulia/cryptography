@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/icon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/icon/site.webmanifest" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rivest Cipher 4</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: rgb(6, 1, 41);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-image: url("https://wallpapercave.com/wp/wp8834188.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      header {
+        padding: 20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50px;
+        /* background-color: #ddd;
+  border-bottom: 1px solid #bbb; */
+        color: #fff;
+        font-size: 24px;
+        font-weight: 700;
+        z-index: 1000;
+      }
+
+      .logo {
+        color: rgb(161, 60, 255);
+        font-size: 18px;
+      }
+
+      .tab {
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+      }
+
+      .myName {
+        cursor: pointer;
+        margin-right: 16px;
+        transition: all 0.3s;
+        border-bottom: 1px solid transparent;
+      }
+
+      .myName:hover {
+        border-bottom: 1px solid #333;
+      }
+
+      .scroll {
+        background-color: #ddd;
+        border-bottom: 1px solid #bbb;
+        position: fixed;
+        color: #000;
+      }
+
+      img {
+        width: 400px;
+      }
+
+      .container {
+        padding: 32px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: row;
+        margin-top: 5rem;
+        margin-bottom: 2rem;
+      }
+
+      .right {
+        max-width: 600px;
+        margin: 0 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        text-align: justify;
+        font-size: 29px;
+      }
+
+      span {
+        opacity: 0.7;
+        font-size: 15px;
+      }
+
+      .topsi {
+        padding-bottom: 6px;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.267);
+      }
+
+      p {
+        margin-top: 12px;
+      }
+
+      .c2 {
+        flex-direction: row-reverse;
+      }
+
+      @media screen and (max-width: 1150px) {
+        .container,
+        .c2 {
+          flex-direction: column;
+          align-items: center;
+          padding: 32px 12px;
+          text-align: center;
+        }
+
+        h2 {
+          margin-top: 32px;
+          text-align: center;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: #c24f3d;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="">
+      <div class="logo">Rivest Cipher 4</div>
+      <div class="tab">
+        <div class="myName">Home</div>
+        <div class="myName"><a href="view/encrypt_view.php">Encryption</a></div>
+        <div class="myName"><a href="view/decrypt_view.php">Decryption</a></div>
+      </div>
+    </header>
+    <div class="container">
+      <img
+        src="https://static01.nyt.com/images/2021/03/11/arts/11nft-explain-1/merlin_184196631_939fb22d-b909-4205-99d9-b464fb961d32-mobileMasterAt3x.jpg"
+        alt="logo nft"
+      />
+      <div class="right">
+        <div class="topsi">
+          <h2>Apa itu Rivest Cipher 4?</h2>
+          <span
+            >RC4 (Rivest Cipher 4) adalah sandi aliran kunci simetris, 
+             banyak digunakan dalam protokol keamanan internet seperti WEP dan WPA untuk 
+             keamanan jaringan nirkabel. Ini dirancang oleh Ron Rivest dari RSA Security pada 
+             tahun 1987, dan algoritmanya dirahasiakan sebagai rahasia dagang. Meskipun digunakan 
+             secara luas, 
+             beberapa kelemahan telah ditemukan di RC4,
+             dan disarankan untuk menggunakan algoritma kriptografi yang lebih aman. . .
+          </span>
+        </div>
+        <p style="text-align: justify">
+          RC4 (Rivest Cipher 4) adalah stream cipher yang menggunakan kunci simetris untuk 
+          mengenkripsi data. Ini dirancang oleh Ron Rivest dari RSA Security pada tahun 1987 dan 
+          banyak digunakan dalam berbagai protokol keamanan, 
+          seperti WEP dan WPA untuk keamanan jaringan nirkabel.
+        </p>
+        <p style="text-align: justify">
+          RC4 beroperasi dengan menghasilkan aliran bit pseudo-acak, yaitu
+          kemudian digabungkan dengan plaintext sehingga menghasilkan ciphertext. Kuncinya
+          digunakan di RC4 menentukan urutan bit pseudo-acak yang dihasilkan,
+          dan kunci yang sama harus digunakan untuk enkripsi dan dekripsi.
+        </p>
+        <p style="text-align: justify">
+          Meskipun digunakan secara luas, RC4 ternyata memiliki beberapa manfaat
+          kelemahan, seperti potensi bias keystream, yang menyebabkan hal ini
+          rentan terhadap serangan tertentu. Oleh karena itu, disarankan untuk menggunakannya
+          algoritma kriptografi yang lebih kuat dan lebih aman, seperti AES.
+        </p>
+      </div>
+    </div>
+    <script>
+      const $ = document;
+      let menu = $.querySelector("header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY >= 30) {
+          menu.classList.add("scroll");
+        } else {
+          menu.classList.remove("scroll");
+        }
+      });
+    </script>
+  </body>
+</html>
